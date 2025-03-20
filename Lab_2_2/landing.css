@@ -84,7 +84,7 @@ nav ul li a {
 .top-teachers {
     text-align: center;
     padding: 40px 20px;
-    max-width: calc(100% - 700px); /* Зменшив ширину блоку відповідно до хедера */
+    max-width: calc(100% - 600px); /* Зменшив ширину блоку відповідно до хедера */
     margin: 0 auto; /* Центрування блоку */ 
 }
 .filters {
@@ -163,4 +163,56 @@ nav ul li a {
     background-color: black;
     position: relative; /* Змінено на relative для незалежності */
     margin: 20px auto; /* Центрування та відступи зверху і знизу */
+}
+
+.statistics {
+    text-align: center;
+    padding: 0px 20px;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.statistics h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: white;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f5ff;
+}
+
+.pagination {
+    margin-top: 20px;
+    
+    
+}
+
+.pagination a, .pagination span {
+    margin: 0 7px;
+    text-decoration: none;
+    color: #3777bc;
+    font-weight: arial;
+    cursor: pointer;
+}
+
+.pagination a:hover {
+    text-decoration: underline;
 }
