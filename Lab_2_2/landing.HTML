@@ -115,89 +115,118 @@
     
     <section class="statistics">
         <h2>Statistics</h2>
-        <table>
+        <table id="statistics-table">
             <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Speciality</th>
-                    <th>Age</th>
-                    <th>Gender</th>
-                    <th>Nationality</th>
-                </tr>
+            <tr>
+                <th onclick="sortTable(0)">Name</th>
+                <th onclick="sortTable(1)">Speciality</th>
+                <th onclick="sortTable(2)">Age</th>
+                <th onclick="sortTable(3)">Gender</th>
+                <th onclick="sortTable(4)">Nationality</th>
+            </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Daisy Alexander</td>
-                    <td>Chemistry</td>
-                    <td>28</td>
-                    <td>Female</td>
-                    <td>Vietnam</td>
-                </tr>
-                <tr>
-                    <td>Julia Bradley</td>
-                    <td>Math</td>
-                    <td>26</td>
-                    <td>Female</td>
-                    <td>USA</td>
-                </tr>
-                <tr>
-                    <td>Rita Hart</td>
-                    <td>Art</td>
-                    <td>41</td>
-                    <td>Female</td>
-                    <td>Ireland</td>
-                </tr>
-                <tr>
-                    <td>Jonathan Jacobs</td>
-                    <td>Math</td>
-                    <td>32</td>
-                    <td>Male</td>
-                    <td>England</td>
-                </tr>
-                <tr>
-                    <td>Nathaniel White</td>
-                    <td>Computer Science</td>
-                    <td>37</td>
-                    <td>Male</td>
-                    <td>Austria</td>
-                </tr>
-                <tr>
-                    <td>Frank Medina</td>
-                    <td>English</td>
-                    <td>43</td>
-                    <td>Male</td>
-                    <td>Italy</td>
-                </tr>
-                <tr>
-                    <td>Ella Curtis</td>
-                    <td>Chess</td>
-                    <td>34</td>
-                    <td>Female</td>
-                    <td>USA</td>
-                </tr>
-                <tr>
-                    <td>Claire Simmmons</td>
-                    <td>Art</td>
-                    <td>38</td>
-                    <td>Female</td>
-                    <td>Netherlands</td>
-                </tr>
-                <tr>
-                    <td>Benjamin Knight</td>
-                    <td>Biology</td>
-                    <td>44</td>
-                    <td>Male</td>
-                    <td>Scotland</td>
-                </tr>
-                <tr>
-                    <td>Norma Rose</td>
-                    <td>Statistics</td>
-                    <td>36</td>
-                    <td>Female</td>
-                    <td>France</td>
-                </tr>
+            <tr>
+                <td>Daisy Alexander</td>
+                <td>Chemistry</td>
+                <td>28</td>
+                <td>Female</td>
+                <td>Vietnam</td>
+            </tr>
+            <tr>
+                <td>Julia Bradley</td>
+                <td>Math</td>
+                <td>26</td>
+                <td>Female</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td>Rita Hart</td>
+                <td>Art</td>
+                <td>41</td>
+                <td>Female</td>
+                <td>Ireland</td>
+            </tr>
+            <tr>
+                <td>Jonathan Jacobs</td>
+                <td>Math</td>
+                <td>32</td>
+                <td>Male</td>
+                <td>England</td>
+            </tr>
+            <tr>
+                <td>Nathaniel White</td>
+                <td>Computer Science</td>
+                <td>37</td>
+                <td>Male</td>
+                <td>Austria</td>
+            </tr>
+            <tr>
+                <td>Frank Medina</td>
+                <td>English</td>
+                <td>43</td>
+                <td>Male</td>
+                <td>Italy</td>
+            </tr>
+            <tr>
+                <td>Ella Curtis</td>
+                <td>Chess</td>
+                <td>34</td>
+                <td>Female</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td>Claire Simmmons</td>
+                <td>Art</td>
+                <td>38</td>
+                <td>Female</td>
+                <td>Netherlands</td>
+            </tr>
+            <tr>
+                <td>Benjamin Knight</td>
+                <td>Biology</td>
+                <td>44</td>
+                <td>Male</td>
+                <td>Scotland</td>
+            </tr>
+            <tr>
+                <td>Norma Rose</td>
+                <td>Statistics</td>
+                <td>36</td>
+                <td>Female</td>
+                <td>France</td>
+            </tr>
             </tbody>
         </table>
+        <script>
+        let sortDirection = {}; // Object to track sorting direction
+
+        function sortTable(columnIndex) {
+            let table = document.getElementById("statistics-table");
+            let tbody = table.getElementsByTagName("tbody")[0];
+            let rows = Array.from(tbody.getElementsByTagName("tr"));
+
+            // Toggle sorting direction for the column
+            let ascending = sortDirection[columnIndex] = !sortDirection[columnIndex];
+
+            rows.sort((rowA, rowB) => {
+            let cellA = rowA.getElementsByTagName("td")[columnIndex].innerText.toLowerCase();
+            let cellB = rowB.getElementsByTagName("td")[columnIndex].innerText.toLowerCase();
+
+            // If the column contains numbers, sort numerically
+            if (!isNaN(cellA) && !isNaN(cellB)) {
+                return ascending ? cellA - cellB : cellB - cellA;
+            }
+
+            // Otherwise, sort alphabetically
+            return ascending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+            });
+
+            // Append sorted rows back to the table body
+            tbody.innerHTML = "";
+            rows.forEach(row => tbody.appendChild(row));
+        }
+        </script>
         <div class="pagination">
             <a href="#">1</a>
             <a href="#">2</a>
@@ -207,6 +236,47 @@
         </div>
         <div class="border-line2"></div>
     </section>
-    
+
+    <!-- Додано блок Favorites зі стрілочками -->
+<section class="favorites">
+    <h2>Favorites</h2>
+    <div class="favorites-container">
+        <button class="scroll-button left">&#10094;</button>
+        <div class="teachers-grid-new">
+            <div class="teacher favorite">
+                <img src="Kirishima.jpg" alt="Ihor Tkachuk">
+                <h3>Ihor Tkachuk</h3>
+                <p>Chemistry</p>
+                <p>Ukraine</p>
+            </div>
+            <div class="teacher favorite">
+                <img src="AM.jpg" alt="Anna Muzychuk">
+                <h3>Anna Muzychuk</h3>
+                <p>Chess</p>
+                <p>Belarus</p>
+            </div>
+            <div class="teacher favorite">
+                <img src="Toka3.jpg" alt="John Burke">
+                <h3>John Burke</h3>
+                <p>Computer Science</p>
+                <p>Belgium</p>
+            </div>
+            <div class="teacher favorite">
+                <img src="Toka3.jpg" alt="Ari Tang">
+                <h3>Ari Tang</h3>
+                <p>Biology</p>
+                <p>China</p>
+            </div>
+            <div class="teacher favorite">
+                <img src="Toka2.jpg" alt="Floor Jansen">
+                <h3>Floor Jansen</h3>
+                <p>Vocal</p>
+                <p>Denmark</p>
+            </div>
+        </div>
+        <button class="scroll-button right">&#10095;</button>
+    </div>
+    <div class="border-line2"></div>
+</section>
 </body>
 </html>

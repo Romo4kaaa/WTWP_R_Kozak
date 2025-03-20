@@ -47,6 +47,10 @@ nav ul li a {
     color: #ff5a5a;
     font-weight: bold;
 }
+nav ul li a:hover {
+    color: #ff5a5a;
+    text-decoration: underline;
+}
 .right-section {
     display: flex;
     flex-direction: column;
@@ -69,6 +73,11 @@ nav ul li a {
     padding: 8px 12px;
     cursor: pointer;
     border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.search-button:hover {
+    background-color: White;
+    color: #ff5a5a;
 }
 .add-teacher {
     background: none;
@@ -80,6 +89,12 @@ nav ul li a {
     cursor: pointer;
     border-radius: 4px;
     margin-top: 50px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.add-teacher:hover {
+    background-color: #ff5a5a;
+    color: white;
 }
 .top-teachers {
     text-align: center;
@@ -200,9 +215,11 @@ tbody tr:nth-child(odd) {
 }
 
 .pagination {
-    margin-top: 20px;
-    
-    
+    display: flex;
+    justify-content: flex-start; /* Вирівнює вліво */
+    width: 100%; /* Розтягує контейнер */
+    margin-top: 10px; /* Відступ від таблиці */
+    margin-left: 110px; /* Зсуває праворуч */
 }
 
 .pagination a, .pagination span {
@@ -215,4 +232,62 @@ tbody tr:nth-child(odd) {
 
 .pagination a:hover {
     text-decoration: underline;
+}
+/* Стилі для блоку Favorites зі стрілочками */
+.favorites {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: calc(100% - 600px); /* Зменшив ширину блоку відповідно до хедера */
+    margin: 0 auto; /* Центрування блоку */
+    position: relative;
+}
+
+.favorites h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.favorites-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Вирівнювання по центру */
+    position: relative;
+}
+
+.teachers-grid-new {
+    display: flex;
+    overflow: hidden;
+    gap: 30px;
+    width: 100%;
+    justify-content: center; /* Вирівнювання по центру */
+}
+
+.scroll-button {
+    background-color: transparent;
+    color: gray;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+.scroll-button.left {
+    left: -50px;
+}
+
+.scroll-button.right {
+    right: -50px;
+}
+
+.scroll-button:hover {
+    color: #000000; 
 }
