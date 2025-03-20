@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Додавання викладача</title>
+</head>
+<body>
+    <h1>Форма для додавання викладача</h1>
+    <form action="/submit-teacher" method="post">
+        <label for="fullName">Повне ім’я:</label>
+        <input type="text" id="fullName" name="fullName" required><br><br>
+
+        <label for="gender">Стать:</label>
+        <select id="gender" name="gender" required>
+            <option value="male">Чоловік</option>
+            <option value="female">Жінка</option>
+            <option value="other">Інше</option>
+        </select><br><br>
+        
+        <label for="dob">Дата народження:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="color">Бажаний колір фону:</label>
+        <input type="color" id="color" name="color"><br><br>
+
+        <label for="country">Країна:</label>
+        <input type="text" id="country" name="country" required><br><br>
+
+        <label for="city">Місто:</label>
+        <input type="text" id="city" name="city" required><br><br>
+
+        <label for="comment">Коментар:</label>
+        <textarea id="comment" name="comment"></textarea><br><br>
+
+        <input type="submit" value="Додати викладача">
+    </form>
+</body>
+</html></select>

@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    max-width: calc(100% - 700px); /* Зменшив ширину хедера на 300px */
+    margin: 0 auto; /* Центрування хедера */
+}
+.border-line {
+    width: calc(100% - 400px); /* Зменшив ширину чорної лінії відповідно до хедера */
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    bottom: -10px; /* Опустив лінію нижче */
+    left: 50%;
+    transform: translateX(-50%);
+}
+.left-section {
+    display: flex;
+    flex-direction: column;
+}
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ff5a5a;
+    text-shadow: 1px 1px 2px black;
+}
+nav {
+    margin-top: 10px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #ff5a5a;
+    font-weight: bold;
+}
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.search-container input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.search-button {
+    background-color: #ff5a5a;
+    color: white;
+    border: 1px solid #ff5a5a;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.add-teacher {
+    background: none;
+    border: 2px solid #ff5a5a;
+    color: #ff5a5a;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 50px;
+}
+.top-teachers {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: calc(100% - 700px); /* Зменшив ширину блоку відповідно до хедера */
+    margin: 0 auto; /* Центрування блоку */ 
+}
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.filters label {
+    font-size: 14px;
+}
+.teachers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+.teacher {
+    text-align: center;
+    width: 150px;
+}
+.teacher img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #ff5a5a;
+}
+.teacher h3 {
+    margin: 10px 0 5px;
+    font-size: 16px;
+}
+.teacher p {
+    margin: 0;
+    font-size: 14px;
+    color: gray;
+}
+.teacher.initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #ff5a5a;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff5a5a;
+}
+.teacher.initials h3 {
+    margin: 10px 0 5px;
+    font-size: 16px;
+}
+.teacher.initials p {
+    margin: 0;
+    font-size: 14px;
+    color: gray;
+}
+
+.teacher.favorite img {
+    position: relative;
+}
+.teacher.favorite {
+    position: relative;
+}
+.teacher.favorite::after {
+    content: '★';
+    color: gold;
+    font-size: 36px;
+    position: absolute;
+    top: -15px;
+    right: +20px;
+}
+.border-line2 {
+    width: 50%; /* Фіксована ширина, незалежна від хедера */
+    height: 1px;
+    background-color: black;
+    position: relative; /* Змінено на relative для незалежності */
+    margin: 20px auto; /* Центрування та відступи зверху і знизу */
+}
