@@ -199,30 +199,26 @@
             </tbody>
         </table>
         <script>
-        let sortDirection = {}; // Object to track sorting direction
+        let sortDirection = {};
 
         function sortTable(columnIndex) {
             let table = document.getElementById("statistics-table");
             let tbody = table.getElementsByTagName("tbody")[0];
             let rows = Array.from(tbody.getElementsByTagName("tr"));
 
-            // Toggle sorting direction for the column
             let ascending = sortDirection[columnIndex] = !sortDirection[columnIndex];
 
             rows.sort((rowA, rowB) => {
             let cellA = rowA.getElementsByTagName("td")[columnIndex].innerText.toLowerCase();
             let cellB = rowB.getElementsByTagName("td")[columnIndex].innerText.toLowerCase();
 
-            // If the column contains numbers, sort numerically
             if (!isNaN(cellA) && !isNaN(cellB)) {
                 return ascending ? cellA - cellB : cellB - cellA;
             }
 
-            // Otherwise, sort alphabetically
             return ascending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
             });
 
-            // Append sorted rows back to the table body
             tbody.innerHTML = "";
             rows.forEach(row => tbody.appendChild(row));
         }
@@ -278,5 +274,31 @@
     </div>
     <div class="border-line2"></div>
 </section>
+<footer>
+    <!-- Текстові блоки -->
+    <div class="footer-content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque facere, hic impedit itaque molestiae sit tempore? Ea in mollitia natus rerum voluptates. Ea ex excepturi facere tempora. Aliquid asperiores hic impedit iusto natus quaerat ratione sit? Culpa iusto optio voluptas voluptate. Enim eveniet fugit iure maiores molestiae, praesentium quia.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam eligendi illum in inventore ipsum odio officiis omnis quisquam sed tempora?</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque esse expedita id iusto mollitia, odit sint ullam veritatis vero?</p>
+    </div>
+
+    <!-- Нижній блок з навігацією та кнопкою -->
+    <div class="footer-bottom">
+        <!-- Навігаційне меню -->
+        <nav class="footer-nav">
+            <ul>
+                <li><a href="#">Teachers</a></li>
+                <li><a href="#">Statistics</a></li>
+                <li><a href="#">Favorites</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+
+        <!-- Кнопка "Add teacher" -->
+        <div class="footer-right">
+            <button class="add-teacher">Add teacher</button>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

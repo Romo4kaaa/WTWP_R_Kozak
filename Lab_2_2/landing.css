@@ -10,15 +10,15 @@ header {
     align-items: center;
     padding: 20px;
     position: relative;
-    max-width: calc(100% - 700px); /* Зменшив ширину хедера на 300px */
-    margin: 0 auto; /* Центрування хедера */
+    max-width: calc(100% - 700px); 
+    margin: 0 auto; 
 }
 .border-line {
-    width: calc(100% - 400px); /* Зменшив ширину чорної лінії відповідно до хедера */
+    width: calc(100% - 400px); 
     height: 1px;
     background-color: black;
     position: absolute;
-    bottom: -10px; /* Опустив лінію нижче */
+    bottom: -10px; 
     left: 50%;
     transform: translateX(-50%);
 }
@@ -43,7 +43,7 @@ nav ul {
 }
 nav ul li a {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     color: #ff5a5a;
     font-weight: bold;
 }
@@ -84,7 +84,7 @@ nav ul li a:hover {
     border: 2px solid #ff5a5a;
     color: #ff5a5a;
     padding: 10px 15px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     cursor: pointer;
     border-radius: 4px;
@@ -173,11 +173,11 @@ nav ul li a:hover {
     right: +20px;
 }
 .border-line2 {
-    width: 50%; /* Фіксована ширина, незалежна від хедера */
-    height: 1px;
+    width: 50%; 
+    height: 2px;
     background-color: black;
     position: relative; /* Змінено на relative для незалежності */
-    margin: 20px auto; /* Центрування та відступи зверху і знизу */
+    margin: 50px auto; /* Центрування та відступи зверху і знизу */
 }
 
 .statistics {
@@ -290,4 +290,56 @@ tbody tr:nth-child(odd) {
 
 .scroll-button:hover {
     color: #000000; 
+}
+/* Стилі для футера */
+footer {
+    display: flex;
+    flex-direction: column; /* Текст і нижній блок розташовані вертикально */
+    align-items: center; /* Центрування по горизонталі */
+    padding: 20px;
+    background-color: #ffffff;
+    margin-top: -60px; 
+    max-width: calc(100% - 500px); /* Зменшуємо ширину футера на 500 пікселів */
+    margin-left: auto; /* Центрування футера */
+    margin-right: auto; /* Центрування футера */
+}
+
+.footer-content {
+    width: 100%; /* Текст займає всю ширину футера */
+    font-size: 16px;
+    color: #555;
+    text-align: left; /* Центрування тексту */
+    margin-bottom: 20px; /* Відступ між текстом і нижнім блоком */
+}
+
+.footer-content p {
+    margin: 0 0 10px 0; /* Відступи між абзацами */
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between; /* Навігація і кнопка розташовані по краях */
+    align-items: center; /* Вирівнювання по центру вертикально */
+    width: 100%; /* Нижній блок займає всю ширину футера */
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+}
+
+.footer-nav ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #ff5733; /* Червоний колір для посилань */
+    font-weight: bold;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
 }
