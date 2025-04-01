@@ -198,31 +198,6 @@
             </tr>
             </tbody>
         </table>
-        <script>
-        let sortDirection = {};
-
-        function sortTable(columnIndex) {
-            let table = document.getElementById("statistics-table");
-            let tbody = table.getElementsByTagName("tbody")[0];
-            let rows = Array.from(tbody.getElementsByTagName("tr"));
-
-            let ascending = sortDirection[columnIndex] = !sortDirection[columnIndex];
-
-            rows.sort((rowA, rowB) => {
-            let cellA = rowA.getElementsByTagName("td")[columnIndex].innerText.toLowerCase();
-            let cellB = rowB.getElementsByTagName("td")[columnIndex].innerText.toLowerCase();
-
-            if (!isNaN(cellA) && !isNaN(cellB)) {
-                return ascending ? cellA - cellB : cellB - cellA;
-            }
-
-            return ascending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
-            });
-
-            tbody.innerHTML = "";
-            rows.forEach(row => tbody.appendChild(row));
-        }
-        </script>
         <div class="pagination">
             <a href="#">1</a>
             <a href="#">2</a>
