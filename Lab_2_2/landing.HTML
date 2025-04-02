@@ -25,10 +25,11 @@
                 <input type="text" placeholder="Name, note or age to search">
                 <button class="search-button">Search</button>
             </div>
-            <button class="add-teacher">Add teacher</button>
+            <button class="add-teacher" onclick="document.getElementById('add-teacher-modal').checked = true;">Add teacher</button>
         </div>
         <div class="border-line"></div>
     </header>
+
     <section class="top-teachers">
         <h2>Top Teachers</h2>
         <div class="filters">
@@ -60,51 +61,81 @@
             <label><input type="checkbox"> Only favorites</label>
         </div>
         <div class="teachers-grid">
+            <!-- Teacher 1 -->
             <div class="teacher">
-                <img src="Kirishima.jpg" alt="Ihor Tkachuk">
+                <label for="teacher-modal-1">
+                    <img src="Kirishima.jpg" alt="Ihor Tkachuk" class="teacher-img">
+                </label>
                 <h3>Ihor Tkachuk</h3>
                 <p>Chemistry</p>
                 <p>Ukraine</p>
             </div>
+
+            <!-- Teacher 2 -->
             <div class="teacher">
-                <img src="Toka.jpg" alt="Pragg Rameshbabu">
+                <label for="teacher-modal-2">
+                    <img src="Toka.jpg" alt="Pragg Rameshbabu" class="teacher-img">
+                </label>
                 <h3>Pragg Rameshbabu</h3>
                 <p>Chess</p>
                 <p>India</p>
             </div>
+
+            <!-- Teacher 3 -->
             <div class="teacher favorite">
-                <img src="Toka2.jpg" alt="Floor Jansen">
+                <label for="teacher-modal-3">
+                    <img src="Toka2.jpg" alt="Floor Jansen" class="teacher-img">
+                </label>
                 <h3>Floor Jansen</h3>
                 <p>Vocal</p>
                 <p>Denmark</p>
             </div>
+
+            <!-- Teacher 4 -->
             <div class="teacher">
-                <img src="Toka3.jpg" alt="John Burke">
+                <label for="teacher-modal-4">
+                    <img src="Toka3.jpg" alt="John Burke" class="teacher-img">
+                </label>
                 <h3>John Burke</h3>
                 <p>Computer Science</p>
                 <p>Belgium</p>
             </div>
+
+            <!-- Teacher 5 -->
             <div class="teacher favorite">
-                <img src="Toka3.jpg" alt="Ari Tang">
+                <label for="teacher-modal-5">
+                    <img src="Toka3.jpg" alt="Ari Tang" class="teacher-img">
+                </label>
                 <h3>Ari Tang</h3>
                 <p>Biology</p>
                 <p>China</p>
             </div>
+
+            <!-- Teacher 6 -->
             <div class="teacher">
-                <img src="Toka3.jpg" alt="Rachel Andrew">
+                <label for="teacher-modal-6">
+                    <img src="Toka3.jpg" alt="Rachel Andrew" class="teacher-img">
+                </label>
                 <h3>Rachel Andrew</h3>
                 <p>Medicine</p>
                 <p>UK</p>
             </div>
+
+            <!-- Teacher 7 -->
             <div class="teacher">
-                <img src="AM.jpg" >
+                <label for="teacher-modal-7">
+                    <img src="AM.jpg" alt="Anna Muzychuk" class="teacher-img">
+                </label>
                 <h3>Anna Muzychuk</h3>
                 <p>Chess</p>
                 <p>Belarus</p>
             </div>
 
+            <!-- Teacher 8 -->
             <div class="teacher">
-                <img src="AM.jpg" >
+                <label for="teacher-modal-8">
+                    <img src="AM.jpg" alt="Radoslaw Ljubojevic" class="teacher-img">
+                </label>
                 <h3>Radoslaw Ljubojevic</h3>
                 <p>Physics</p>
                 <p>Poland</p>
@@ -207,73 +238,370 @@
         </div>
         <div class="border-line2"></div>
     </section>
+    <section class="favorites">
+        <h2>Favorites</h2>
+        <div class="favorites-container">
+            <button class="scroll-button left">&#10094;</button>
+            <div class="teachers-grid-new">
+                <div class="teacher favorite">
+                    <label for="favorite-modal-1">
+                        <img src="Kirishima.jpg" alt="Ihor Tkachuk" class="teacher-img">
+                    </label>
+                    <h3>Ihor Tkachuk</h3>
+                    <p>Chemistry</p>
+                    <p>Ukraine</p>
+                </div>
+                <div class="teacher favorite">
+                    <img src="AM.jpg" alt="Anna Muzychuk">
+                    <h3>Anna Muzychuk</h3>
+                    <p>Chess</p>
+                    <p>Belarus</p>
+                </div>
+                <div class="teacher favorite">
+                    <img src="Toka3.jpg" alt="John Burke">
+                    <h3>John Burke</h3>
+                    <p>Computer Science</p>
+                    <p>Belgium</p>
+                </div>
+                <div class="teacher favorite">
+                    <label for="favorite-modal-3">
+                    <img src="Toka.jpg" alt="Ari Tang" class="teacher-img-popup">
+                    </label>
+                    <h3>Ari Tang</h3>
+                    <p>Biology</p>
+                    <p>China</p>
+                </div>
+                <div class="teacher favorite">
+                    <label for="favorite-modal-2">
+                        <img src="Toka2.jpg" alt="Floor Jansen" class="teacher-img">
+                    </label>
+                    <h3>Floor Jansen</h3>
+                    <p>Vocal</p>
+                    <p>Denmark</p>
+                </div>
+            </div>
+            <button class="scroll-button right">&#10095;</button>
+        </div>
+        <div class="border-line2"></div>
+    </section>
 
-    <!-- Додано блок Favorites зі стрілочками -->
-<section class="favorites">
-    <h2>Favorites</h2>
-    <div class="favorites-container">
-        <button class="scroll-button left">&#10094;</button>
-        <div class="teachers-grid-new">
-            <div class="teacher favorite">
-                <img src="Kirishima.jpg" alt="Ihor Tkachuk">
-                <h3>Ihor Tkachuk</h3>
-                <p>Chemistry</p>
-                <p>Ukraine</p>
+    <!-- Модальні вікна для Top Teachers -->
+    <input type="checkbox" id="teacher-modal-1" class="modal-toggle">
+<div class="modal">
+    <label for="teacher-modal-1" class="modal-overlay"></label>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Teacher Info</h2>
+            <label for="teacher-modal-1" class="close-btn">&times;</label>
+        </div>
+        
+        <div class="teacher-content">
+            <div class="teacher-info">
+                <img src="Toka3.jpg" alt="Thor Tkachuk" class="teacher-img" style="max-width: 20%; height: auto; margin-right: 20px;">
+                
+                <div class="teacher-main-info">
+                    <h3>Thor Tkachuk</h3>
+                    <h4>Chemistry</h4>
+                    
+                    <div class="teacher-details">
+                        <div class="detail-row">
+                            <span class="detail-icon">📍</span>
+                            <span>Kyiv, Ukraine</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-icon">👤</span>
+                            <span>35, Male</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-icon">✉️</span>
+                            <span>thor_tkachuk@domain.com</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-icon">📱</span>
+                            <span>+380964995252</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="teacher favorite">
-                <img src="AM.jpg" alt="Anna Muzychuk">
-                <h3>Anna Muzychuk</h3>
-                <p>Chess</p>
-                <p>Belarus</p>
+            
+            <div class="divider"></div>
+            
+            <div class="teacher-bio">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aa autem consectetur utlato enimpat, egettictio dolor dolore etuore magna aliquam erat consequatur cupiditate dolois deserunt alacinque euismod tincidunt ut labore etus nisi. Aa autem consectetur adipiscing elit. Aa autem consectetur utlato enimpat, egettictio dolor dolore etuore magna aliquam erat consequatur cupiditate dolois deserunt alacinque euismod tincidunt ut labore etus nisi.</p>
             </div>
-            <div class="teacher favorite">
-                <img src="Toka3.jpg" alt="John Burke">
-                <h3>John Burke</h3>
-                <p>Computer Science</p>
-                <p>Belgium</p>
+            
+            <div class="divider"></div>
+            
+            
+            
+            <text class="map-toggle">Logistic map</text>
+        </div>
+    </div>
+</div>
+
+    <input type="checkbox" id="teacher-modal-2" class="modal-toggle">
+    <div class="modal">
+        <label for="teacher-modal-2" class="modal-overlay"></label>
+        <div class="modal-content">
+            <label for="teacher-modal-1" class="close-btn">&times;</label>
+            
+            <div class="teacher-header">
+                <h2>Teacher Info</h2>
+                <h3>Pragg Rameshbabu</h3>
+                <h4>Chemistry</h4>
             </div>
-            <div class="teacher favorite">
-                <img src="Toka3.jpg" alt="Ari Tang">
-                <h3>Ari Tang</h3>
-                <p>Biology</p>
-                <p>China</p>
+            <img src="Toka3.jpg" alt="Ihor Tkachuk" class="teacher-img" style="max-width: 20%; height: auto; margin-right: 20px;">
+            <div class="teacher-details">
+                <div class="detail-row">
+                    <span class="detail-icon">📍</span>
+                    <span>Kyiv, Ukraine</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-icon">👤</span>
+                    <span>35, Male</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-icon">✉️</span>
+                    <span>ihor_tkachuk@domain.com</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-icon">📱</span>
+                    <span>+380964993252</span>
+                </div>
             </div>
-            <div class="teacher favorite">
-                <img src="Toka2.jpg" alt="Floor Jansen">
-                <h3>Floor Jansen</h3>
-                <p>Vocal</p>
-                <p>Denmark</p>
+            
+            <div class="teacher-bio">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore dolorem doloremque ea explicabo facilis nam nesciunt nisi pariatur perspiciatis porro quis similique temporibus veniam veritatis? A ab ad, aliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum elus eos minus nostrum odit omnis perferendis...</p>
+            </div>
+            
+            <button class="map-toggle">toggle_map</button>
+        </div>
+    </div>
+
+    <input type="checkbox" id="teacher-modal-3" class="modal-toggle">
+    <div class="modal">
+        <label for="teacher-modal-3" class="modal-overlay"></label>
+        <div class="modal-content">
+            <label for="teacher-modal-3" class="close-btn">&times;</label>
+            <div class="modal-header"></div>
+            <img src="Toka3.jpg" alt="Floor Jansen" class="teacher-img-popup" style="max-width: 20%; height: auto; border-radius: 50%; margin-right: 20px;">
+            <div>
+                <h2>Floor Jansen</h2>
+                <p><strong>Subject:</strong> Vocal</p>
+                <p><strong>Country:</strong> Denmark</p>
+            </div>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore doloremque ea explicabo facilis nam nesciunt nisi pariatur perspiciatis porro quis similique temporibus veniam veritatis?</p>
+            <p>A ab ad, aliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum eius eos minus nostrum odit omnis perferendis...</p>
+            <a href="#" style="color: blue; text-decoration: underline;">toggle map</a>
+        </div>
+    </div>
+
+    
+
+    <!-- Модальні вікна для Favorites -->
+    <input type="checkbox" id="favorite-modal-1" class="modal-toggle">
+    <div class="modal">
+        <label for="favorite-modal-1" class="modal-overlay"></label>
+        <div class="modal-content teacher-info-header">
+            <label for="teacher-modal-1" class="close-btn">&times;</label>
+            
+            <div class="teacher-header">
+                <h2>Teacher Info</h2>
+                <h3>Thor Tkachuk</h3>
+                <h4>Chemistry</h4>
+            </div>
+            <img src="Toka3.jpg" alt="Ihor Tkachuk" class="teacher-img" style="max-width: 20%; height: auto; margin-right: 20px;">
+            <div class="teacher-details">
+                <div class="detail-row">
+                    <span class="detail-icon">📍</span>
+                    <span>Kyiv, Ukraine</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-icon">👤</span>
+                    <span>35, Male</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-icon">✉️</span>
+                    <span>ihor_tkachuk@domain.com</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-icon">📱</span>
+                    <span>+380964993252</span>
+                </div>
+            </div>
+            
+            <div class="teacher-bio">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem consectetur culpa cumque, distinctio dolor dolore dolorem doloremque ea explicabo facilis nam nesciunt nisi pariatur perspiciatis porro quis similique temporibus veniam veritatis? A ab ad, aliquam amet consequatur cupiditate debitis deserunt doloribus dolorum earum elus eos minus nostrum odit omnis perferendis...</p>
+            </div>
+            
+            <button class="map-toggle">toggle_map</button>
+        </div>
+    </div>
+
+    <input type="checkbox" id="favorite-modal-2" class="modal-toggle">
+    <div class="modal">
+        <label for="favorite-modal-2" class="modal-overlay"></label>
+        <div class="modal-content">
+            <label for="favorite-modal-2" class="close-btn">&times;</label>
+            <h2>Floor Jansen</h2>
+            <p><strong>Subject:</strong> Vocal</p>
+            <p><strong>Country:</strong> Denmark</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ao aetem consectetur udea cumque, eclatictio dolor dolore dolorem doloremque eu euplicis nisi nam necius nisl puritur perspiciatis pone quis similique temporibus veniam veniam semid?</p>
+        </div>
+    </div>
+
+    <input type="checkbox" id="favorite-modal-3" class="modal-toggle">
+    <div class="modal">
+        <label for="favorite-modal-3" class="modal-overlay"></label>
+        <div class="modal-content">
+            <label for="favorite-modal-3" class="close-btn">&times;</label>
+            <h2>Ari Tang</h2>
+            <p><strong>Subject:</strong> Biology</p>
+            <p><strong>Country:</strong> China</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ao aetem consectetur udea cumque, eclatictio dolor dolore dolorem doloremque eu euplicis nisi nam necius nisl puritur perspiciatis pone quis similique temporibus veniam veniam semid?</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque facere, hic impedit itaque molestiae sit tempore? Ea in mollitia natus rerum voluptates. Ea ex excepturi facere tempora. Aliquid asperiores hic impedit iusto natus quaerat ratione sit? Culpa iusto optio voluptas voluptate. Enim eveniet fugit iure maiores molestiae, praesentium quia.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam eligendi illum in inventore ipsum odio officiis omnis quisquam sed tempora?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque esse expedita id iusto mollitia, odit sint ullam veritatis vero?</p>
+        </div>
+
+        <div class="footer-bottom">
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#">Teachers</a></li>
+                    <li><a href="#">Statistics</a></li>
+                    <li><a href="#">Favorites</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+
+            <div class="footer-right">
+                <button class="add-teacher" onclick="document.getElementById('add-teacher-modal').checked = true;">Add teacher</button>
             </div>
         </div>
-        <button class="scroll-button right">&#10095;</button>
-    </div>
-    <div class="border-line2"></div>
-</section>
-<footer>
-    <!-- Текстові блоки -->
-    <div class="footer-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque facere, hic impedit itaque molestiae sit tempore? Ea in mollitia natus rerum voluptates. Ea ex excepturi facere tempora. Aliquid asperiores hic impedit iusto natus quaerat ratione sit? Culpa iusto optio voluptas voluptate. Enim eveniet fugit iure maiores molestiae, praesentium quia.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam eligendi illum in inventore ipsum odio officiis omnis quisquam sed tempora?</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque esse expedita id iusto mollitia, odit sint ullam veritatis vero?</p>
-    </div>
+    </footer>
 
-    <!-- Нижній блок з навігацією та кнопкою -->
-    <div class="footer-bottom">
-        <!-- Навігаційне меню -->
-        <nav class="footer-nav">
-            <ul>
-                <li><a href="#">Teachers</a></li>
-                <li><a href="#">Statistics</a></li>
-                <li><a href="#">Favorites</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </nav>
+    <script>
+        let sortDirection = {};
+        function sortTable(columnIndex) {
+            let table = document.getElementById("statistics-table");
+            let tbody = table.getElementsByTagName("tbody")[0];
+            let rows = Array.from(tbody.getElementsByTagName("tr"));
 
-        <!-- Кнопка "Add teacher" -->
-        <div class="footer-right">
-            <button class="add-teacher">Add teacher</button>
+            let ascending = sortDirection[columnIndex] = !sortDirection[columnIndex];
+
+            rows.sort((rowA, rowB) => {
+                let cellA = rowA.getElementsByTagName("td")[columnIndex].innerText.toLowerCase();
+                let cellB = rowB.getElementsByTagName("td")[columnIndex].innerText.toLowerCase();
+
+                if (!isNaN(cellA) && !isNaN(cellB)) {
+                    return ascending ? cellA - cellB : cellB - cellA;
+                }
+
+                return ascending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+            });
+
+            tbody.innerHTML = "";
+            rows.forEach(row => tbody.appendChild(row));
+        }
+    </script>
+    <input type="checkbox" id="add-teacher-modal" class="modal-toggle">
+    <div class="modal add-teacher-modal">
+        <label for="add-teacher-modal" class="modal-overlay"></label>
+        <div class="modal-content">
+            <div class="add-teacher-header">
+                <h2>Add Teacher</h2>
+                <label for="add-teacher-modal" class="close-btn">&times;</label>
+            </div>
+            
+            <div class="add-teacher-form">
+                <form id="teacherForm">
+                <div class="form-group2">
+                    <label>Name</label>
+                    <input type="text" placeholder="Enter name">
+                </div>
+                
+                <div class="form-group2">
+                    <label>Specialty</label>
+                    <select id="specialty" name="specialty" required>
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="Science">Science</option>
+                        <option value="Art">Art</option>
+                        <option value="Chemistry">Chemistry</option>
+                        <option value="Chess">Chess</option>
+                        <option value="Vocal">Vocal</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Biology">Biology</option>
+                        <option value="Medicine">Medicine</option>
+                    </select>
+                </div>
+                
+                <div class="form-group double">
+                    <div>
+                        <label for="country">Country:</label>
+                        <select id="country" name="country" required>
+                            <option value="USA">USA</option>
+                            <option value="Canada">Canada</option>
+                            <option value="UK">UK</option>
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="India">India</option>
+                            <option value="Denmark">Denmark</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="China">China</option>
+                            <option value="Belarus">Belarus</option>
+                            <option value="Poland">Poland</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="city">City:</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                </div>
+                
+                <div class="form-group double">
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div>
+                        <label for="dob">Date of Birth:</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                </div>
+                
+                <div class="form-group radio-buttons">
+                    <label>Sex:</label>
+                    <input type="radio" id="male" name="sex" value="male" required>
+                    <label-radio for="male">Male</label-radio>
+                    <input type="radio" id="female" name="sex" value="female" required>
+                    <label-radio for="female">Female</label-radio>
+                </div>
+                
+                <div class="form-group">
+                    <div>
+                        <label for="notes">Notes (optional):</label>
+                        <textarea id="notes" name="notes" rows="4" cols="500"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-divider"></div>
+                
+                <button class="add-teacher-btn">Add</button>
+            </form>
+            </div>
         </div>
     </div>
-</footer>
 </body>
 </html>
